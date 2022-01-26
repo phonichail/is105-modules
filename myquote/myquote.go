@@ -2,6 +2,16 @@ package myquote
 
 import myPKG "rsc.io/quote"
 
-func CallMe() string {
+func GetGlassQuote() string {
 	return myPKG.Glass()
+}
+
+func GetGoQuote() string {
+	return myPKG.Go()
+}
+func GetHelloQuote() string {
+	return myPKG.Hello()
+}
+func GetOptQuote() string {
+	return myPKG.Opt()
 }

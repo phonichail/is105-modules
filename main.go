@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
-
-	fmt.Println(myquote.CallMe())
+	fmt.Println(myquote.GetGlassQuote())
+	fmt.Println(myquote.GetGoQuote())
+	fmt.Println(myquote.GetHelloQuote())
+	fmt.Println(myquote.GetOptQuote())
 }
