@@ -1,7 +1,11 @@
 package main
 
-import "is105-modules/myquote"
+import (
+	"fmt"
+	"is105-modules/myquote"
+)
 
 func main() {
-	myquote.CallMe()
+
+	fmt.Println(myquote.CallMe())
 }
