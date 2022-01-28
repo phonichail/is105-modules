@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"testing"
 )
 
 // var boat = "⛵"
@@ -46,32 +45,20 @@ func crossRiver(transporter *actor, transported *actor) string {
 	if transported.alive == false {
 		msg = transported.icon + " is dead!"
 	} else {
-
 		if transporter.position == transported.position {
 			if transporter.position == "left" {
 				transporter.position = "right"
 				transported.position = "right"
-
 			} else {
-
 				transporter.position = "left"
 				transported.position = "left"
 			}
-
 			msg = transporter.icon + " transports " + transported.icon + " to " + transported.position
 		} else {
 			msg = transporter.icon + " is not at the same position as " + transported.icon
 		}
 	}
 	return msg
-}
-
-func putInBoat() {
-
-}
-
-func viewState() {
-
 }
 
 func Eats(actors *[4]actor) bool {
@@ -83,14 +70,8 @@ func Eats(actors *[4]actor) bool {
 		actors[3].alive = false
 		fmt.Println(actors[2].icon, "eats", actors[3].icon)
 	}
+	fmt.Println("No one got eaten.")
 	return true
-}
-
-func TestActorState (t *testing.T) {
-	got := true;
-	if actor.alive != true {
-		t.Errorf("Error Test")
-	}
 }
 
 func main() {
@@ -100,22 +81,29 @@ func main() {
 	chicken := initActor("🐔", "Chicken")
 	corn := initActor("🌽", "Corn")
 	actors := [4]actor{*human, *fox, *chicken, *corn}
-	
+	crossRiver(&actors[0], &actors[1])
+	Eats(&actors)
 
-	TestActorState(crossRiver(&actors[0], &actors[2]) && Eats(&actors))
-	
-	/*
-	func TestAbs(t *testing.T) {
-    got := Abs(-1)
-    if got != 1 {
-        t.Errorf("Abs(-1) = %d; want 1", got)
-    }
-	}
-	*/
-	/*
-		boat := boat{icon: "⛵",
-			name:     "Boat",
-			position: "left",
-		}
-	*/
 }
+
+/*
+		func TestAbs(t *testing.T) {
+	    got := Abs(-1)
+	    if got != 1 {
+	        t.Errorf("Abs(-1) = %d; want 1", got)
+	    }
+		}
+*/
+/*
+	boat := boat{icon: "⛵",
+		name:     "Boat",
+		position: "left",
+	}
+*/
+
+/*
+
+func putInBoat() {
+
+}
+*/
