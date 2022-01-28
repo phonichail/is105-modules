@@ -11,9 +11,10 @@ func Test(t *testing.T) {
 	chicken := initActor("🐔", "Chicken")
 	corn := initActor("🌽", "Corn")
 	actors := [4]actor{*human, *fox, *chicken, *corn}
-	fmt.Println(crossRiver(&actors[0], &actors[2]))
 
 	expectedOutcome := false
+
+	fmt.Println(crossRiver(&actors[0], &actors[2])) // 2 "works"
 
 	if Eats(&actors) == expectedOutcome {
 		t.Errorf("Dead")
@@ -50,19 +51,5 @@ func Test(t *testing.T) {
 	}
 
 	fmt.Println(crossRiver(&actors[0], &actors[2]))
-	/*
 
-			func init() {
-			human := initActor("👨", "Human")
-			fox := initActor("🦊", "Fox")
-			chicken := initActor("🐔", "Chicken")
-			corn := initActor("🌽", "Corn")
-			actors := [4]actor{*human, *fox, *chicken, *corn}
-			crossRiver(&actors[0], &actors[1])
-			Eats(&actors)
-		}
-					if alive !=  {
-				        t.Errorf("Dead", got)
-				    }
-	*/
 }

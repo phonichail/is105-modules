@@ -4,14 +4,6 @@ import (
 	"fmt"
 )
 
-// var boat = "⛵"
-var river = "🌊🌊🌊🌊🌊"
-var human = "👨"
-
-var fox = "🦊"
-var chicken = "🐔"
-var corn = "🌽"
-
 type actor struct {
 	icon     string
 	name     string
@@ -65,12 +57,14 @@ func Eats(actors *[4]actor) bool {
 	if actors[0].position != actors[1].position && actors[1].position == actors[2].position {
 		actors[2].alive = false
 		fmt.Println(actors[1].icon, "eats", actors[2].icon)
+		return false
 	}
 	if actors[0].position != actors[2].position && actors[2].position == actors[3].position {
 		actors[3].alive = false
 		fmt.Println(actors[2].icon, "eats", actors[3].icon)
+		return false
 	}
-	fmt.Println("No one got eaten.")
+	fmt.Println("No one was eaten.")
 	return true
 }
 
@@ -85,25 +79,3 @@ func main() {
 	Eats(&actors)
 
 }
-
-/*
-		func TestAbs(t *testing.T) {
-	    got := Abs(-1)
-	    if got != 1 {
-	        t.Errorf("Abs(-1) = %d; want 1", got)
-	    }
-		}
-*/
-/*
-	boat := boat{icon: "⛵",
-		name:     "Boat",
-		position: "left",
-	}
-*/
-
-/*
-
-func putInBoat() {
-
-}
-*/
