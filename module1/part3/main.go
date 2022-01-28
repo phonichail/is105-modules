@@ -4,6 +4,14 @@ import (
 	"fmt"
 )
 
+// var boat = "⛵"
+var river = "🌊🌊🌊🌊🌊"
+var human = "👨"
+
+var fox = "🦊"
+var chicken = "🐔"
+var corn = "🌽"
+
 type actor struct {
 	icon     string
 	name     string
@@ -69,7 +77,6 @@ func Eats(actors *[4]actor) bool {
 }
 
 func main() {
-
 	human := initActor("👨", "Human")
 	fox := initActor("🦊", "Fox")
 	chicken := initActor("🐔", "Chicken")

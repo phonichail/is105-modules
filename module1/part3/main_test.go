@@ -14,7 +14,7 @@ func Test(t *testing.T) {
 
 	expectedOutcome := false
 
-	fmt.Println(crossRiver(&actors[0], &actors[2])) // 2 "works"
+	fmt.Println(crossRiver(&actors[0], &actors[1])) // 2 "works" -> // 1 & 3 "no work"
 
 	if Eats(&actors) == expectedOutcome {
 		t.Errorf("Dead")
