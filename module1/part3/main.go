@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"testing"
 )
 
 // var boat = "⛵"
@@ -85,6 +86,13 @@ func Eats(actors *[4]actor) bool {
 	return true
 }
 
+func TestActorState (t *testing.T) {
+	got := true;
+	if actor.alive != true {
+		t.Errorf("Error Test")
+	}
+}
+
 func main() {
 
 	human := initActor("👨", "Human")
@@ -92,11 +100,18 @@ func main() {
 	chicken := initActor("🐔", "Chicken")
 	corn := initActor("🌽", "Corn")
 	actors := [4]actor{*human, *fox, *chicken, *corn}
+	
 
-	fmt.Println(crossRiver(&actors[0], &actors[2]))
-	Eats(&actors)
-	fmt.Println()
-
+	TestActorState(crossRiver(&actors[0], &actors[2]) && Eats(&actors))
+	
+	/*
+	func TestAbs(t *testing.T) {
+    got := Abs(-1)
+    if got != 1 {
+        t.Errorf("Abs(-1) = %d; want 1", got)
+    }
+	}
+	*/
 	/*
 		boat := boat{icon: "⛵",
 			name:     "Boat",
