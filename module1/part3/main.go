@@ -4,8 +4,8 @@ import (
 	"fmt"
 )
 
-var boat = "⛵"
-var river = "🌊"
+// var boat = "⛵"
+var river = "🌊🌊🌊🌊🌊"
 var human = "👨"
 
 var fox = "🦊"
@@ -17,6 +17,13 @@ type actor struct {
 	name     string
 	position string
 	alive    bool
+}
+
+type boat struct {
+	icon     string
+	name     string
+	position string
+	carries  *actor
 }
 
 func initActor(icon_ string, name_ string) *actor {
@@ -66,7 +73,7 @@ func viewState() {
 
 }
 
-func eats(actors *[4]actor) bool {
+func Eats(actors *[4]actor) bool {
 	if actors[0].position != actors[1].position && actors[1].position == actors[2].position {
 		actors[2].alive = false
 		fmt.Println(actors[1].icon, "eats", actors[2].icon)
@@ -79,6 +86,7 @@ func eats(actors *[4]actor) bool {
 }
 
 func main() {
+
 	human := initActor("👨", "Human")
 	fox := initActor("🦊", "Fox")
 	chicken := initActor("🐔", "Chicken")
@@ -86,6 +94,13 @@ func main() {
 	actors := [4]actor{*human, *fox, *chicken, *corn}
 
 	fmt.Println(crossRiver(&actors[0], &actors[2]))
-	eats(&actors)
+	Eats(&actors)
+	fmt.Println()
 
+	/*
+		boat := boat{icon: "⛵",
+			name:     "Boat",
+			position: "left",
+		}
+	*/
 }
